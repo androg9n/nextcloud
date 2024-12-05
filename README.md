@@ -1,5 +1,3 @@
-# Nextcloud Quick Start
-
 Start Your Own Cloud in Minutes
 
 ![Files page Screenshot](images/Screenshot4.png "Files page Screenshot")
@@ -46,15 +44,24 @@ The platform uses the following components:
      ```bash
      cd nextcloud
      ```
-# Starting with Docker Compose
+## Configuration (Optional)
+
+The default configuration is workable and assumes local use with a self-signed certificate for local `cloud.home` domain.
+
+> [!NOTE]
+> The only you have to configure for succesfull starting is domain resolving from all host you want to have access Nextcloud server.
+> It can be solved by Domain name hosting provider config, local DNS config, or even by editing `/etc/hosts` (for local solution).
+
+Feel free to open variables file `docker-compose/.env` with your favorite text editor. Here you can configure:
+- **Nextcloud image version**
+- **PostgreSQL image version**
+- **Domain hostname**
+
+For switch between Self-signed and Let's Encrypt SSL/TLS enable only one service Omgwtfssl or Letsencrypt-companion in `docker-compose/compose.yaml` file.
 
 ## Prerquisites
 
 1. Ensure Docker Compose is installed on your host. [Installation instructions](https://docs.docker.com/compose/install/).
-
-## Configuration (Optional)
-
-The default configuration assumes local use with a self-signed certificate.
 
 ## Starting
 
